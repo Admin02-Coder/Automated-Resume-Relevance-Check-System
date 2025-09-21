@@ -1,43 +1,46 @@
-cat > .gitignore << 'EOL'
+# Environment files - ALL VARIATIONS
+.env
+.env.*
+.env.save
+.env.backup
+.env.bak
+.env.old
+.env.local
+.env.production
+.env.development
+
+# Streamlit secrets
+.streamlit/secrets.toml
+.streamlit/secrets.*
+
+# Any backup or temporary files that might contain secrets
+*secret*
+*key*
+*token*
+*.save
+*.backup
+*.bak
+*.old
+*~
+
 # Virtual Environment
 venv/
 env/
 ENV/
 
-# Python
+# Python cache
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
+*.pyc
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 
-# Environment variables - KEEP THESE SECRET!
-.env
-.env.local
-.env.production
-
-# Streamlit secrets - KEEP SECRET!
-.streamlit/secrets.toml
-
-# Database files - Don't commit user data
+# Database files with user data
 *.db
 *.sqlite
 *.sqlite3
 resume_relevance.db
 
-# Data folders with uploaded files - Privacy protection
+# Data directories with potentially sensitive uploads
 data/resumes/*
 data/job_descriptions/*
 data/embeddings/*
@@ -45,33 +48,17 @@ data/embeddings/*
 !data/job_descriptions/.gitkeep
 !data/embeddings/.gitkeep
 
-# IDE files
+# IDE and OS files
 .vscode/
 .idea/
-*.swp
-*.swo
-
-# OS files
 .DS_Store
 Thumbs.db
+
+# Log files
+*.log
+logs/
 
 # Temporary files
 *.tmp
 temp/
 tmp/
-
-# Logs
-*.log
-logs/
-
-# Node modules (if any)
-node_modules/
-
-# Coverage reports
-htmlcov/
-.coverage
-.coverage.*
-
-# Pytest
-.pytest_cache/
-EOL
