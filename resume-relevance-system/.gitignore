@@ -1,0 +1,47 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environment variables
+.env
+.env.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+resume_relevance.db
+
+# Data folders
+data/resumes/*
+data/job_descriptions/*
+data/embeddings/*
+!data/resumes/.gitkeep
+!data/job_descriptions/.gitkeep
+!data/embeddings/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Temp files
+*.tmp
+temp/
+tmp/
