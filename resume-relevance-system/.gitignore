@@ -1,3 +1,4 @@
+cat > .gitignore << 'EOL'
 # Virtual Environment
 venv/
 env/
@@ -9,18 +10,34 @@ __pycache__/
 *$py.class
 *.so
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
 
-# Environment variables - IMPORTANT: Don't commit your API keys!
+# Environment variables - KEEP THESE SECRET!
 .env
 .env.local
+.env.production
 
-# Database
+# Streamlit secrets - KEEP SECRET!
+.streamlit/secrets.toml
+
+# Database files - Don't commit user data
 *.db
 *.sqlite
 *.sqlite3
 resume_relevance.db
 
-# Data folders with personal data
+# Data folders with uploaded files - Privacy protection
 data/resumes/*
 data/job_descriptions/*
 data/embeddings/*
@@ -28,20 +45,33 @@ data/embeddings/*
 !data/job_descriptions/.gitkeep
 !data/embeddings/.gitkeep
 
-# IDE
+# IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS
+# OS files
 .DS_Store
 Thumbs.db
 
-# Streamlit
-.streamlit/secrets.toml
-
-# Temp files
+# Temporary files
 *.tmp
 temp/
 tmp/
+
+# Logs
+*.log
+logs/
+
+# Node modules (if any)
+node_modules/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Pytest
+.pytest_cache/
+EOL
