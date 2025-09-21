@@ -10,7 +10,7 @@ __pycache__/
 *.so
 .Python
 
-# Environment variables
+# Environment variables - IMPORTANT: Don't commit your API keys!
 .env
 .env.local
 
@@ -20,7 +20,7 @@ __pycache__/
 *.sqlite3
 resume_relevance.db
 
-# Data folders
+# Data folders with personal data
 data/resumes/*
 data/job_descriptions/*
 data/embeddings/*
